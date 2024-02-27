@@ -62,7 +62,7 @@ def img_to_hdf5(cxr_paths: List[Union[str, Path]], out_filepath: str, resolution
                 # print(img)
                 img_dset[idx] = img
             except Exception as e: 
-                print("loi")
+                print(len(failed_images))
                 failed_images.append((path, e))
     print(f"{len(failed_images)} / {len(cxr_paths)} images failed to be added to h5.", failed_images)
 
