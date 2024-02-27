@@ -338,6 +338,10 @@ def make_true_labels(
     """
     # create ground truth labels
     full_labels = pd.read_csv(cxr_true_labels_path)
+
+    # Remove rows where the "Path" column contains "view2"
+    full_labels = full_labels[~full_labels['Path'].str.contains('view2')]
+
     if cutlabels: 
         full_labels = full_labels.loc[:, cxr_labels]
     else: 
