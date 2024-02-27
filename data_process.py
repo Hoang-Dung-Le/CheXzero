@@ -52,9 +52,8 @@ def img_to_hdf5(cxr_paths: List[Union[str, Path]], out_filepath: str, resolution
         for idx, path in enumerate(tqdm(cxr_paths)):
             try: 
                 # read image using cv2'
-                print(str(path))
                 img = cv2.imread(str(path))
-                
+                print("doc thanh cong anh")
                 # convert to PIL Image object
                 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
                 img_pil = Image.fromarray(img)
