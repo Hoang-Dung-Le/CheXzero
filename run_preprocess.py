@@ -27,6 +27,7 @@ if __name__ == "__main__":
     elif args.dataset_type == "chexpert-test": 
         # Get all test paths based on cxr dir
         cxr_dir = Path(args.chest_x_ray_path)
+        
         cxr_paths = list(cxr_dir.rglob("*.jpg"))
         cxr_paths = list(filter(lambda x: "view1" in str(x), cxr_paths)) # filter only first frontal views 
         cxr_paths = sorted(cxr_paths) # sort to align with groundtruth
