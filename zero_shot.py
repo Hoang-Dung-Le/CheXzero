@@ -340,12 +340,12 @@ def make_true_labels(
     full_labels = pd.read_csv(cxr_true_labels_path)
 
     # Keep rows where the "Path" column contains "view1" and does not contain "view2" or "view3"
-    full_labels = full_labels[full_labels['Path'].str.contains('view1') & ~full_labels['Path'].str.contains('view2') & ~full_labels['Path'].str.contains('view3')]
+    # full_labels = full_labels[full_labels['Path'].str.contains('view1') & ~full_labels['Path'].str.contains('view2') & ~full_labels['Path'].str.contains('view3')]
 
-    if cutlabels: 
-        full_labels = full_labels.loc[:, cxr_labels]
-    else: 
-        full_labels.drop(full_labels.columns[0], axis=1, inplace=True)
+    # if cutlabels: 
+    #     full_labels = full_labels.loc[:, cxr_labels]
+    # else: 
+    #     full_labels.drop(full_labels.columns[0], axis=1, inplace=True)
 
     y_true = full_labels.to_numpy()
     return y_true
